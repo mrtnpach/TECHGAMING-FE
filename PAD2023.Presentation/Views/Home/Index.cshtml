@@ -2,7 +2,213 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<section>
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="5000">
+                <img src="~/img/slider2.png" class="d-block w-100" alt="Este es un slider en el cual se presentan la promocion de Techgaming ">
+            </div>
+            <div class="carousel-item">
+                <img src="~/img/slider1.png" class="d-block w-100" alt="Este es un slider en el cual se presentan la promocion de Techgaming de forma en que los clientes sepan lo que se hace ">
+            </div>
+            <div class="carousel-item">
+                <img src="~/img/Techgaming.png" class="d-block w-100" alt="Este es un slider en el cual se muestran las formas de pagos y envios de Techgaming ">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</section>
+
+<section class="container p-0 section--categories w-100">
+    <article id="Services" class="row container ">
+        <div class="section--categories__card w-100 col-sm-12">
+            <img src="~/img/componentes.jpg" alt="Esta es una card en la cual te dirige a la categoría de componentes de Techgaming">
+            <div class="card-content">
+                <h2>Componentes de PC</h2>
+                <p>
+                    Descubre componentes de PC de alta calidad para construir o mejorar tu computadora. Encuentra procesadores, tarjetas gráficas, almacenamiento y más para llevar tu PC al siguiente nivel.
+                </p>
+                <a asp-controller="Categorias" asp-action="Index" asp-fragment="categoriesComponents" class="btn boton3"> Ir a componentes</a>
+            </div>
+        </div>
+        <div class="section--categories__card w-100 col-sm-12 ">
+            <img src="~/img/perifericos.jpg" alt="Esta es una card en la cual te dirige a la categoría de perifericos de Techgaming">
+            <div class="card-content">
+                <h2>Perifericos</h2>
+                <p>
+                    Optimiza tu estación de trabajo con periféricos de primera categoría. Tenemos teclados, ratones, auriculares y más para mejorar tu experiencia de computación y gaming.
+                </p>
+                <a asp-controller="Categorias" asp-action="Index" asp-fragment="categoriesPeri" class="btn boton3"> Ir a Perifericos</a>
+            </div>
+        </div>
+        <div class="section--categories__card w-100 col-sm-12">
+            <img src="~/img/notebook-categories.png" alt="Esta es una card en la cual te dirige a la categoría de notebooks de Techgaming">
+            <div class="card-content">
+                <h2>Notebooks</h2>
+                <p>
+                    Explora nuestra selección de notebooks potentes y portátiles. Ya sea para trabajar, estudiar o jugar, tenemos opciones que se adaptan a tus necesidades y presupuesto.
+                </p>
+                <a asp-controller="Categorias" asp-action="Index" asp-fragment="categoriesNotebooks" class="btn boton3"> Ir a Notebooks</a>
+            </div>
+        </div>
+        <div class="section--categories__card w-100  col-sm-12 ">
+            <img src="~/img/compotadura-categoies.jpg " alt="Esta es una card en la cual te dirige a la categoría de Computadoras de Techgaming">
+            <div class="card-content">
+                <h2>Computadoras Armadas</h2>
+                <p>
+                    ¿Buscas una solución lista para usar? Nuestras computadoras armadas ofrecen rendimiento excepcional. Desde juegos hasta trabajo creativo, tenemos la computadora perfecta para ti.
+                </p>
+                <a asp-controller="Categorias" asp-action="Index" asp-fragment="categoriesPcs" class="btn boton3"> Ir a Computadoras</a>
+            </div>
+        </div>
+    </article>
+</section>
+<section class="container-fluid d-flex flex-column section--products ">
+
+    <h2>Insumos <span class="section--products__span">Populares</span></h2>
+
+    <article class="d-flex justify-content-evenly flex-wrap w-100">
+        <div class="card" style="width: 21rem;">
+            <img src="~/img/placa1.jpg" class="card-img-top" alt="AMD Radeon RX 6800">
+            <div class="card-body d-flex flex-column justify-content-between">
+                <h5 class="card-title">Placa de Video <span class="marca-modelo">AMD Radeon RX 6800</span></h5>
+                <p class="card-text">Experimenta el poder gráfico sin igual con la Nvidia GeForce RTX 3080. Rendimiento de vanguardia para juegos y creación de contenido.</p>
+                <a href="./pages/error404.html" class="btn boton2">Comprar Ahora</a>
+            </div>
+        </div>
+        <div class="card" style="width: 21rem;">
+            <img src="~/img/placa2.jpg" class="card-img-top" alt="Nvidia GeForce RTX 3080">
+            <div class="card-body d-flex flex-column justify-content-between">
+                <h5 class="card-title">Placa de Video <span class="marca-modelo">Nvidia GeForce RTX 3080</span></h5>
+                <p class="card-text">La AMD Radeon RX 6800 ofrece un rendimiento gráfico excepcional. Juega y crea con una calidad visual impresionante.</p>
+                <a href="./pages/error404.html" class="btn boton2">Comprar Ahora</a>
+            </div>
+        </div>
+        <div class="card section--products__disappear" style="width: 21rem;">
+            <img src="~/img/proce.jpg" class="card-img-top" alt="Ryzen 9 5900X">
+            <div class="card-body d-flex flex-column justify-content-between">
+                <h5 class="card-title">Procesador AMD <span class="marca-modelo">Ryzen 9 5900X</span></h5>
+                <p class="card-text">Domina la velocidad y la eficiencia con el procesador AMD Ryzen 9 5900X. Ideal para tareas exigentes y juegos de alto nivel.</p>
+                <a href="./pages/error404.html" class="btn boton2">Comprar Ahora</a>
+            </div>
+        </div>
+    </article>
+
+    <h2>Computadoras Armadas <span class="section--products__span">Populares</span></h2>
+
+    <article class="d-flex justify-content-evenly flex-wrap ">
+        <div class="card" style="width: 21rem;">
+            <img src="~/img/pc1.jpg" class="card-img-top" alt="HyperTech A2000">
+            <div class="card-body d-flex flex-column justify-content-between">
+                <h5 class="card-title">PC Armada <span class="marca-modelo">HyperTech A2000</span></h5>
+                <p class="card-text">Potencia y versatilidad se unen en la PC armada HyperTech A2000. Diseñada para tareas intensivas y juegos de alto rendimiento.</p>
+                <a href="./pages/error404.html" class="btn boton2">Comprar Ahora</a>
+            </div>
+        </div>
+        <div class="card" style="width: 21rem;">
+            <img src="~/img/pc2.jpg" class="card-img-top" alt="HyperTech A5600">
+            <div class="card-body d-flex flex-column justify-content-between">
+                <h5 class="card-title">PC Armada <span class="marca-modelo">HyperTech A5600</span></h5>
+                <p class="card-text">Potencia y versatilidad se unen en la PC armada HyperTech A5600. Diseñada para tareas intensivas y juegos de alto rendimiento.</p>
+                <a href="./pages/error404.html" class="btn boton2">Comprar Ahora</a>
+            </div>
+        </div>
+        <div class="card section--products__disappear" style="width: 21rem;">
+            <img src="~/img/pc3.jpg" class="card-img-top" alt="NovaTech Z700">
+            <div class="card-body d-flex flex-column justify-content-between">
+                <h5 class="card-title">PC Armada <span class="marca-modelo">NovaTech Z700</span></h5>
+                <p class="card-text">La PC armada NovaTech Z700 es la elección perfecta para usuarios profesionales y creativos. Rendimiento y confiabilidad excepcionales.</p>
+                <a href="./pages/error404.html" class="btn boton2">Comprar Ahora</a>
+            </div>
+        </div>
+    </article>
+
+    <h2>Perifericos <span class="section--products__span">Populares</span></h2>
+
+    <article class="d-flex justify-content-evenly flex-wrap ">
+        <div class="card" style="width: 21rem;">
+            <img src="~/img/peri1.jpg" class="card-img-top" alt="HyperSound x2000">
+            <div class="card-body d-flex flex-column justify-content-between">
+                <h5 class="card-title">Auriculares <span>HyperSound x2000</span> </h5>
+                <p class="card-text">Sumérgete en el sonido envolvente con los auriculares HyperSound X2000 de HyperSound. Disfruta de una experiencia auditiva inigualable.</p>
+                <a href="./pages/error404.html" class="btn boton2">Comprar Ahora</a>
+            </div>
+        </div>
+        <div class="card" style="width: 21rem;">
+            <img src="~/img/peri2.jpg" class="card-img-top" alt="HyperPrecision H600">
+            <div class="card-body d-flex flex-column justify-content-between">
+                <h5 class="card-title">Mouse <span class="marca">HyperPrecision H600</span> </h5>
+                <p class="card-text">Domina cada movimiento con el mouse HyperPrecision H600 de HyperSound. Equipado con tecnología de seguimiento avanzada.</p>
+                <a href="./pages/error404.html" class="btn boton2">Comprar Ahora</a>
+            </div>
+        </div>
+        <div class="card section--products__disappear" style="width: 21rem;">
+            <img src="~/img/peri3.jpg" class="card-img-top" alt="HyperType T800">
+            <div class="card-body d-flex flex-column justify-content-between">
+                <h5 class="card-title">Teclado <span class="marca">HyperType T800</span> </h5>
+                <p class="card-text">Eleva tu experiencia de escritura con el teclado HyperType T800 de HyperSound. Retroiluminación personalizable y teclas de respuesta rápida.</p>
+                <a href="./pages/error404.html" class="btn boton2">Comprar Ahora</a>
+            </div>
+        </div>
+    </article>
+
+    <h2>Notebooks <span class="section--products__span">Populares</span></h2>
+
+    <article class="d-flex justify-content-evenly flex-wrap ">
+        <div class="card" style="width: 21rem;">
+            <img src="~/img/notebook1.jpg" class="card-img-top" alt="UltraSlim X">
+            <div class="card-body d-flex flex-column justify-content-between">
+                <h5 class="card-title">
+                    Notebook <span>UltraSlim X1</span>
+                </h5>
+                <p class="card-text">  Descubre la revolución de la productividad con el Notebook UltraSlim X1 de TechWave. Este elegante portátil ultradelgado es una obra maestra de la ingeniería</p>
+                <a href="./pages/error404.html" class="btn boton2">Comprar Ahora</a>
+            </div>
+        </div>
+        <div class="card" style="width: 21rem;">
+            <img src="~/img/notebook2.jpg" class="card-img-top" alt="QuantumBook Pro">
+            <div class="card-body d-flex flex-column justify-content-between">
+                <h5 class="card-title">Notebook  <span>QuantumBook Pro</span></h5>
+                <p class="card-text">QuantumBook Pro de QuantumTech. Este dispositivo es la encarnación de la potencia cuántica en un portátil. Equipado con gráficos avanzados y una batería de larga duración, te permitirá crear, jugar y trabajar sin límites</p>
+                <a href="./pages/error404.html" class="btn boton2">Comprar Ahora</a>
+            </div>
+        </div>
+        <div class="card section--products__disappear" style="width: 21rem;">
+            <img src="~/img/notebook3.jpg" class="card-img-top" alt="SwiftStream 15">
+            <div class="card-body d-flex flex-column justify-content-between">
+                <h5 class="card-title">Notebook <span>SwiftStream 15</span> </h5>
+                <p class="card-text"> El Notebook SwiftStream 15R de SwiftGear es tu compañero perfecto para el trabajo y el entretenimiento. Su diseño ligero y elegante se adapta a tu estilo de vida .</p>
+                <a href="./pages/error404.html" class="btn boton2">Comprar Ahora</a>
+            </div>
+        </div>
+    </article>
+
+
+</section>
+<section class="container d-flex justify-content-center  flex-column w-100 section--contact">
+    <aside class="w-100">
+        <img src="~/img/publicidad1.png" alt="publicidad juego online" class="w-100">
+    </aside>
+    <div class="d-flex section--contact__div ">
+        <div class=" w-50 d-flex flex-column p-5 justify-content-center section--contact__contact  ">
+            <h2>Tienes dudas o consultas?</h2>
+            <h3>Comunicate con nosotros en el siguiente link</h3>
+            <a asp-controller="Contacto" asp-action="Index" class="btn boton3">Contactános</a>
+        </div>
+        <aside class="w-50 section--contact__ads ">
+            <img src="~/img/publicidad2.png" alt="publicidad secundaria" class="w-100 h-100">
+        </aside>
+    </div>
+</section>       

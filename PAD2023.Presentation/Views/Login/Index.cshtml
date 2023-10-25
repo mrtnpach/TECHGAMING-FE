@@ -1,0 +1,38 @@
+﻿@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="login my-5">
+    <section class="container mt-lg-5 bg-light section-login">
+        <div class="row text-dark">
+            <div class="col-12 col-lg-6 mb-3 mb-lg-0 p-0">
+                <img src="../img/login.jpeg" alt="Imagen de login" class="img-fluid h-100">
+            </div>
+            <div class="col-12 col-lg-6 p-3">
+                <h2 class="text-center">Iniciar Sesión</h2>
+                <form action="">
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email:</label>
+                        <input type="email" id="email" class="form-control" placeholder="usuario@usuario.com" minlength="10" maxlength="320" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="clave" class="form-label">Contraseña:</label>
+                        <input type="password" id="clave" class="form-control" placeholder="********" minlength="2" required>
+                    </div>
+                    <div class="text-center">
+                        <button class="btn btnLogin mb-3">Iniciar sesión</button>
+                        <div class="d-flex justify-content-center flex-wrap">
+                            <p class="me-2">Aún no tienes una cuenta?</p>
+                            <a href="../pages/register.html">Regístrate Aquí</a>
+                        </div>
+                    </div>
+                </form>
+                <hr>
+                <div class="btnOpcionesLogin">
+                    <a href="../pages/error404.html" class="btn mb-2 btnGoogle"><i class="fa-brands fa-google"></i> Continuar con Google</a>
+                    <a href="../pages/error404.html" class="btn mb-2 btnFacebook"><i class="fa-brands fa-facebook"></i> Continuar con Facebook</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
