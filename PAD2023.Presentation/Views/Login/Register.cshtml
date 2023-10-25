@@ -1,0 +1,108 @@
+﻿@{
+    ViewData["Title"] = "Register";
+}
+
+<div class="register-main">
+    <h1 class="text-center">¡Registrate!</h1>
+      <form action="">
+        <div class="form-group">
+          <label for="nombreApellido">Nombre y Apellido:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="nombreApellido"
+            name="nombreApellido"
+            minlength="5"
+            maxlength="70"
+            required
+          />
+          <label for="nombreUsuario">Nombre de Usuario:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="nombreUsuario"
+            name="nombreUsuario"
+            minlength="3"
+            maxlength="20"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="email">Dirección de Email:</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            name="email"
+            minlength="10"
+            maxlength="320"
+            required
+            title="Ingrese una dirección de correo electrónico válida"
+          />
+          <label for="valEmail">Validar Email:</label>
+          <input
+            type="email"
+            class="form-control"
+            id="valEmail"
+            name="valEmail"
+            minlength="10"
+            maxlength="320"
+            required
+            title="Ingrese una dirección de correo electrónico válida"
+          />
+        </div>
+        <div class="form-group">
+          <label for="domicilio">Domicilio:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="domicilio"
+            name="domicilio"
+            minlength="5"
+            maxlength="70"
+            required
+          />
+          <label for="telefono">Teléfono:</label>
+          <input
+            type="tel"
+            class="form-control"
+            id="telefono"
+            name="telefono"
+            maxlength="15"
+            required
+          />
+          <label for="codigoPostal">Código Postal:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="codigoPostal"
+            name="codigoPostal"
+            maxlength="15"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="password">Contraseña:</label>
+          <input
+            type="password"
+            class="form-control"
+            id="password"
+            value=""
+            name="password"
+            required
+            title="La contraseña debe tener al menos 6 caracteres"
+          />
+          <label for="valPass">Validar Contraseña:</label>
+          <input
+            type="password"
+            class="form-control"
+            id="valPass"
+            value=""
+            name="valPass"
+            required
+            title="La contraseña debe tener al menos 6 caracteres"
+          />
+        </div>
+        <button type="submit" class="btn btnRegister text-light">Registrarse</button>
+      </form>
+</div>
