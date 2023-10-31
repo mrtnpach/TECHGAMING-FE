@@ -1,4 +1,5 @@
-﻿@{
+﻿@model HomeViewModel
+@{
     ViewData["Title"] = "Home Page";
 }
 
@@ -40,7 +41,7 @@
                 <p>
                     Descubre componentes de PC de alta calidad para construir o mejorar tu computadora. Encuentra procesadores, tarjetas gráficas, almacenamiento y más para llevar tu PC al siguiente nivel.
                 </p>
-                <a asp-controller="Categorias" asp-action="Index" asp-fragment="categoriesComponents" class="btn boton3"> Ir a componentes</a>
+                <a asp-controller="Categorias" asp-action="Category" asp-fragment="categoriesComponents" asp-route-category=@Model.Components asp-route-categoryString="Componentes" class="btn boton3"> Ir a componentes</a>
             </div>
         </div>
         <div class="section--categories__card w-100 col-sm-12 ">
@@ -50,7 +51,7 @@
                 <p>
                     Optimiza tu estación de trabajo con periféricos de primera categoría. Tenemos teclados, ratones, auriculares y más para mejorar tu experiencia de computación y gaming.
                 </p>
-                <a asp-controller="Categorias" asp-action="Index" asp-fragment="categoriesPeri" class="btn boton3"> Ir a Perifericos</a>
+                <a asp-controller="Categorias" asp-action="Category" asp-fragment="categoriesComponents" asp-route-category=@Model.Peripherals asp-route-categoryString="Perifericos" class="btn boton3"> Ir a Perifericos</a>
             </div>
         </div>
         <div class="section--categories__card w-100 col-sm-12">
@@ -60,7 +61,7 @@
                 <p>
                     Explora nuestra selección de notebooks potentes y portátiles. Ya sea para trabajar, estudiar o jugar, tenemos opciones que se adaptan a tus necesidades y presupuesto.
                 </p>
-                <a asp-controller="Categorias" asp-action="Index" asp-fragment="categoriesNotebooks" class="btn boton3"> Ir a Notebooks</a>
+                <a asp-controller="Categorias" asp-action="Category" asp-fragment="categoriesComponents" asp-route-category=@Model.Notebooks asp-route-categoryString="Notebooks" class="btn boton3"> Ir a Notebooks</a>
             </div>
         </div>
         <div class="section--categories__card w-100  col-sm-12 ">
@@ -70,12 +71,12 @@
                 <p>
                     ¿Buscas una solución lista para usar? Nuestras computadoras armadas ofrecen rendimiento excepcional. Desde juegos hasta trabajo creativo, tenemos la computadora perfecta para ti.
                 </p>
-                <a asp-controller="Categorias" asp-action="Index" asp-fragment="categoriesPcs" class="btn boton3"> Ir a Computadoras</a>
+                <a asp-controller="Categorias" asp-action="Category" asp-fragment="categoriesComponents" asp-route-category=@Model.BuiltPCs asp-route-categoryString="Computadoras Armadas" class="btn boton3"> Ir a Computadoras</a>
             </div>
         </div>
     </article>
 </section>
-<section class="container-fluid d-flex flex-column section--products ">
+@*<section class="container-fluid d-flex flex-column section--products ">
 
     <h2>Insumos <span class="section--products__span">Populares</span></h2>
 
@@ -196,7 +197,7 @@
     </article>
 
 
-</section>
+</section>*@
 <section class="container d-flex justify-content-center  flex-column w-100 section--contact">
     <aside class="w-100">
         <img src="~/img/publicidad1.png" alt="publicidad juego online" class="w-100">

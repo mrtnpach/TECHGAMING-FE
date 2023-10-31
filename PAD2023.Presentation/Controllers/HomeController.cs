@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PAD2023.Presentation.Models;
+using StoreServiceReference;
 using System.Diagnostics;
 
 namespace PAD2023.Presentation.Controllers
@@ -15,7 +16,15 @@ namespace PAD2023.Presentation.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            HomeViewModel model = new HomeViewModel() 
+            {
+                BuiltPCs = ProductCategory.BuiltPC,
+                Components = ProductCategory.Components,
+                Notebooks = ProductCategory.Notebook,
+                Peripherals = ProductCategory.Peripheral
+            };
+
+            return View(model);
         }
 
         public IActionResult Privacy()

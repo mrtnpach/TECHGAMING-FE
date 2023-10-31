@@ -1,0 +1,41 @@
+﻿@model List<ProductViewModel>
+@{
+    ViewData["Title"] = Model[0].Category.ToString();
+}
+
+<section>
+    <div class="container py-4">
+        <h4>@ViewData["Category"]</h4>
+        @foreach (var producto in Model)
+        {
+            <article class="row justify-content-center img-fluid object-fit-cover">
+                <div class="col-12 col-md-6 col-lg-3 mb-3">
+                    <div class="card h-100">
+                        <img src="~/img/Ryzen5.png"
+                             class="card-img-top categoriesImg"
+                             alt="Ryzen5" />
+                        <div class="card-body text-light d-flex flex-column">
+                            <h5 class="card-title text-center">@producto.Name</h5>
+                            <p class="card-text">
+                            <p>@producto.Description</p>
+                                @*<ul>
+                        <li>5ta Generación</li>
+                        <li>Incluye 6 núcleos de CPU</li>
+                        <li>Velocidad de reloj base 4,4GHz</li>
+                        </ul>*@
+                            </p>
+                            <div class="mt-auto">
+                                <div>
+                                    <a asp-controller="Product" asp-action="Details" asp-route-id=@producto.Id asp-route-name=@producto.Name class="btn w-100 boton3 mb-1">Ver más</a>
+                                </div>
+                                <div>
+                                    <a href="../pages/error404.html" class="btn w-100 boton3 mb-1">Añadir al carrito</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        }
+    </div>
+</section>

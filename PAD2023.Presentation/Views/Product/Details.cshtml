@@ -1,6 +1,112 @@
 ﻿@model ProductViewModel
+@{
+    ViewData["Title"] = Model.Name;
+}
 
 <section class="container py-4 my-5">
+    <article class="row justify-content-center">
+        <div class="col-12 col-md-6">
+            <div id="carouselProductosPrincipales" class="carousel slide">
+                <div class="carousel-inner">                  
+                    @foreach(string imageSource in Model.ImageUrl)
+                    {
+                        <div class="carousel-item active">
+                            <img src="@imageSource"
+                                    class="d-block img-fluid object-fit-cover mx-auto"
+                                    alt="pcRyzen5a" />
+                        </div>
+                    }
+                </div>
+                <button class="carousel-control-prev"
+                        type="button"
+                        data-bs-target="#carouselProductosPrincipales"
+                        data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next"
+                        type="button"
+                        data-bs-target="#carouselProductosPrincipales"
+                        data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+                </>
+            </div>
+        </div>
+        <div class="col-12 col-md-6">
+            <div class="card h-100">
+                <div class="card-body bg-dark text-light d-flex flex-column">
+                    <h5 class="card-title text-center">@Model.Name</h5>
+                    <p class="card-text">
+                        @Model.Description
+                    </p>
+                    <div class="text-end mt-auto">
+                        <h5 class="ms-auto">Precio: @Model.Price</h5>
+                        <a href="./error404.html" class="btn btn-success bg-light text-dark w-50 btnCart ms-auto">Añadir al carrito</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+</section>
+<section>
+    <div class="container py-4">
+        <h4>Comentarios</h4>
+        <article class="row justify-content-center img-fluid object-fit-cover">
+            <div class="col-12 col-md-4">
+                <div class="card h-100">
+                    <div class="card-body text-light">
+                        <h5 class="card-title text-center">
+                            <i class="fa-solid fa-star starColor"></i>
+                            <i class="fa-solid fa-star starColor"></i>
+                            <i class="fa-solid fa-star starColor"></i>
+                            <i class="fa-solid fa-star starColor"></i>
+                            <i class="fa-solid fa-star starColor"></i>
+                        </h5>
+                        <p class="card-text">
+                            Exactamente lo que buscaba.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4">
+                <div class="card h-100">
+                    <div class="card-body text-light">
+                        <h5 class="card-title text-center">
+                            <i class="fa-solid fa-star starColor"></i>
+                            <i class="fa-solid fa-star starColor"></i>
+                            <i class="fa-solid fa-star starColor"></i>
+                            <i class="fa-solid fa-star starColor"></i>
+                            <i class="fa-regular fa-star starColor"></i>
+                        </h5>
+                        <p class="card-text">
+                            Más o menos los parlantes.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4">
+                <div class="card h-100">
+                    <div class="card-body text-light">
+                        <h5 class="card-title text-center">
+                            <i class="fa-solid fa-star starColor"></i>
+                            <i class="fa-solid fa-star starColor"></i>
+                            <i class="fa-solid fa-star starColor"></i>
+                            <i class="fa-solid fa-star starColor"></i>
+                            <i class="fa-solid fa-star-half-stroke starColor"></i>
+                        </h5>
+                        <p class="card-text">
+                            Pedí un monitor mas grande y no había en stock.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </div>
+</section>
+
+@*<section class="container py-4 my-5">
     <article class="row justify-content-center">
         <div class="col-12 col-md-6">
             <div id="carouselProductosPrincipales" class="carousel slide">
@@ -115,4 +221,4 @@
             </div>
         </article>
     </div>
-</section>
+</section>*@
