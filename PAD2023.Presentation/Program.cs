@@ -1,7 +1,10 @@
+using PAD2023.Presentation.Client;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddScoped<IClient, HttpClientWrapper>();
 
 var app = builder.Build();
 

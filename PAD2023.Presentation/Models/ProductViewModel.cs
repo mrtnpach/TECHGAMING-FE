@@ -32,6 +32,7 @@ namespace PAD2023.Presentation.Models
         public string? Description { get; set; }
         public string? ShortDescription { get; set; }
         public decimal Price { get; set; }
+        public decimal ConvertedPrice { get; set; }
         public Brand Brand { get; set; }
         public int Rating { get; set; }
         //public int Stock { get; set; }
