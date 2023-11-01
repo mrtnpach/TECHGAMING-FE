@@ -20,10 +20,12 @@ namespace StoreServiceReference
     public partial class PersistentEntity : object
     {
         
-        private int IdField;
+        private string IdField;
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public int Id
+        private int ObjectIdField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Id
         {
             get
             {
@@ -32,6 +34,19 @@ namespace StoreServiceReference
             set
             {
                 this.IdField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int ObjectId
+        {
+            get
+            {
+                return this.ObjectIdField;
+            }
+            set
+            {
+                this.ObjectIdField = value;
             }
         }
     }
@@ -158,7 +173,11 @@ namespace StoreServiceReference
         
         private string DescriptionField;
         
+        private StoreServiceReference.ArrayOfString SpecificationsField;
+        
         private string ShortDescriptionField;
+        
+        private string MainImageURLField;
         
         private StoreServiceReference.ArrayOfString ImageURLsField;
         
@@ -241,6 +260,19 @@ namespace StoreServiceReference
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
+        public StoreServiceReference.ArrayOfString Specifications
+        {
+            get
+            {
+                return this.SpecificationsField;
+            }
+            set
+            {
+                this.SpecificationsField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
         public string ShortDescription
         {
             get
@@ -253,7 +285,20 @@ namespace StoreServiceReference
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
+        public string MainImageURL
+        {
+            get
+            {
+                return this.MainImageURLField;
+            }
+            set
+            {
+                this.MainImageURLField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=9)]
         public StoreServiceReference.ArrayOfString ImageURLs
         {
             get

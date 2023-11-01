@@ -15,6 +15,8 @@ namespace PAD2023.Presentation.Models
             Rating = productInfo.Rating;
             ShortDescription = productInfo.ShortDescription;
             Category = productInfo.Category;
+            MainImageUrl = productInfo.MainImageURL;
+            Specifications = productInfo.Specifications;
 
             if(productInfo.ImageURLs != null)
             {
@@ -31,11 +33,13 @@ namespace PAD2023.Presentation.Models
         public ProductCategory Category { get; set; }
         public string? Description { get; set; }
         public string? ShortDescription { get; set; }
+        public List<string>? Specifications { get; set; }
         public decimal Price { get; set; }
         public decimal ConvertedPrice { get; set; }
         public Brand Brand { get; set; }
         public int Rating { get; set; }
         //public int Stock { get; set; }
+        public string MainImageUrl { get; set; }
         public List<string>? ImageUrl { get; set; }
     }
 }

@@ -16,7 +16,7 @@ namespace PAD2023.Presentation.Controllers
                 List<Product> result = proxy.GetAllProducts();
 
                 List<ProductViewModel> model = result
-                    .Select(p => new ProductViewModel(p.Id, p.ProductInfo)).ToList();
+                    .Select(p => new ProductViewModel(p.ObjectId, p.ProductInfo)).ToList();
                 
                 return View(model);
             }
@@ -26,7 +26,7 @@ namespace PAD2023.Presentation.Controllers
             }
         }
 
-        [HttpGet("[action]/{categoryString}")]
+        [HttpGet("[action]")]
         public IActionResult Category(ProductCategory category, string categoryString)
         {
             try
@@ -36,7 +36,7 @@ namespace PAD2023.Presentation.Controllers
                 List<Product> result = proxy.GetProductsByCategory(category);
 
                 ViewData["Category"] = categoryString;
-                List<ProductViewModel> model = result.Select(p => new ProductViewModel(p.Id, p.ProductInfo)).ToList();
+                List<ProductViewModel> model = result.Select(p => new ProductViewModel(p.ObjectId, p.ProductInfo)).ToList();
 
                 return View(model);
             }

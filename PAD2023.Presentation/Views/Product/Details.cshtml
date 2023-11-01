@@ -7,14 +7,17 @@
     <article class="row justify-content-center">
         <div class="col-12 col-md-6">
             <div id="carouselProductosPrincipales" class="carousel slide">
-                <div class="carousel-inner">                  
-                    @foreach(string imageSource in Model.ImageUrl)
+                <div class="carousel-inner">
+                    @if(Model.ImageUrl != null)
                     {
-                        <div class="carousel-item active">
-                            <img src="@imageSource"
-                                    class="d-block img-fluid object-fit-cover mx-auto"
-                                    alt="pcRyzen5a" />
-                        </div>
+                        @foreach(string imageSource in Model.ImageUrl)
+                        {
+                            <div class="carousel-item active">
+                                <img src="@imageSource"
+                                        class="d-block img-fluid object-fit-cover mx-auto"
+                                        alt="pcRyzen5a" />
+                            </div>
+                        }
                     }
                 </div>
                 <button class="carousel-control-prev"
@@ -41,6 +44,17 @@
                     <p class="card-text">
                         @Model.Description
                     </p>
+                    @if(Model.Specifications != null)
+                    {
+                        <p class="card-text">
+                            <ul>
+                                @foreach(string specification in Model.Specifications)
+                                {
+                                    <li>@specification</li>
+                                }
+                            </ul>
+                        </p>    
+                     }
                     <div class="text-end mt-auto">
                         <h5 class="ms-auto">Precio (USD): @Model.Price</h5>
                         <h5 class="ms-auto">Precio (BRL): @Model.ConvertedPrice</h5>

@@ -17,7 +17,7 @@ namespace PAD2023.Presentation.Controllers
             _httpClient = httpClient;
         }
 
-        [HttpGet("{name}")]
+        [HttpGet("[action]")]
         public async Task<IActionResult> Details(int id, string name)
         {
             try
@@ -34,8 +34,10 @@ namespace PAD2023.Presentation.Controllers
                     .GetAsync<CurrencyConversionDTO>(
                     "https://api.freecurrencyapi.com/v1/latest?apikey=fca_live_Mzw3L17vwBMbce25mKE27MHwp8zMdr5eDBtgLDUx&base_currency=USD&currencies=BRL");
 
-                ProductViewModel model = new ProductViewModel(product.Id, product.ProductInfo);
+                ProductViewModel model = new ProductViewModel(product.ObjectId, product.ProductInfo);
                 model.ConvertedPrice = model.Price * (decimal)result.data.BRL;
+
+                _httpClient.Dispose();
 
                 return View(model);
             }
