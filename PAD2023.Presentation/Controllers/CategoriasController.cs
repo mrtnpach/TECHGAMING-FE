@@ -13,7 +13,7 @@ namespace PAD2023.Presentation.Controllers
             {
                 StoreServiceSoapClient proxy =
                     new StoreServiceSoapClient(StoreServiceSoapClient.EndpointConfiguration.StoreServiceSoap);
-                List<Product> result = proxy.GetAllProducts();
+                var result = proxy.GetAllProducts();
 
                 List<ProductViewModel> model = result
                     .Select(p => new ProductViewModel(p.ObjectId, p.ProductInfo)).ToList();
@@ -33,7 +33,7 @@ namespace PAD2023.Presentation.Controllers
             {
                 StoreServiceSoapClient proxy =
                     new StoreServiceSoapClient(StoreServiceSoapClient.EndpointConfiguration.StoreServiceSoap);
-                List<Product> result = proxy.GetProductsByCategory(category);
+                var result = proxy.GetProductsByCategory(category);
 
                 ViewData["Category"] = categoryString;
                 List<ProductViewModel> model = result.Select(p => new ProductViewModel(p.ObjectId, p.ProductInfo)).ToList();
