@@ -58,7 +58,7 @@
                     <div class="text-end mt-auto">
                         <h5 class="ms-auto">Precio: $ @Model.Price</h5>
                         <h5 class="ms-auto">Precio (BRL): @Model.ConvertedPrice</h5>
-                        <a href="./error404.html" class="btn btn-success bg-light text-dark w-50 btnCart ms-auto">Añadir al carrito</a>
+                        <a asp-controller="Home" asp-action="Error" class="btn btn-success bg-light text-dark w-50 btnCart ms-auto">Añadir al carrito</a>
                     </div>
                 </div>
             </div>
